@@ -3,8 +3,25 @@
 This guide helps you automate file and MongoDB backups from a remote server using `rsync` and a cron job.
 
 ---
+## 🚀 1. Initial Setup (SSH Access)
 
-## 📁 1. Create Backup Script
+### 🔐 Step 1: Login to Backup Server
+Run this from your local machine or admin machine:
+```bash
+ssh root@<BACKUP_SERVER_IP>
+```
+### 🔑 Step 2: Enable Passwordless SSH
+From the backup server, run:
+```bash
+ssh-copy-id root@micple.com
+```
+Then:
+- Press `Enter`
+- Enter remote server password when prompted
+✔ This allows automated backups without manual password input.
+
+
+## 📁 2. Create Backup Script
 
 Create a new shell script at `/usr/local/bin/micple_backup.sh`:
 
@@ -39,7 +56,7 @@ echo "### Backup Time: $BACKUP_TIME" >> "$DEST_ROOT_FOLDER/README.md"
 ``` 
 ---
 
-## ⏰ 2. Schedule with Cron
+## ⏰ 3. Schedule with Cron
 
 To run the backup script every hour automatically:
 
