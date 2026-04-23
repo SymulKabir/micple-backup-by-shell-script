@@ -135,8 +135,23 @@ This command runs the backup script every hour on the hour and logs output to ho
 ```markdown
 
 /var/micple.com/backup/
-├── media/                  # Remote media backup
-├── db/                     # Remote MongoDB data backup
-├── README.md               # Timestamp of each backup
-└── hourly-backup.log       # Cron job logs
+├── media/                          # Live synced media from remote server
+│
+├── db-binary/                      # Latest MongoDB binary data (live copy)
+│
+├── db-dump/                        # Latest MongoDB dump (live copy)
+│
+├── previous-backup-db-binary/     # History of DB binary snapshots
+│   ├── db-(23_April_2026,_10:00AM)/
+│   ├── db-(23_April_2026,_11:00AM)/
+│   └── ...
+│
+├── previous-backup-db-dump/       # History of DB dump snapshots
+│   ├── db-(23_April_2026,_10:00AM)/
+│   ├── db-(23_April_2026,_11:00AM)/
+│   └── ...
+│
+├── README.md                      # Backup timestamp tracker (updated via sed)
+│
+└── hourly-backup.log             # (optional) cron logs if configured
 ``` 
