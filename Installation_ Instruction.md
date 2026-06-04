@@ -40,7 +40,7 @@ DB_BINARY_SOURCE_DIR="${REMOTE_USER}:/var/lib/k8s-mongodb"
 DB_BINARY_DEST_DIR="${DEST_ROOT_FOLDER}/db-binary"
 DB_BINARY_PREVIOUS_BACKUP_DIR="${DEST_ROOT_FOLDER}/previous-backup-db-binary"
 
-DB_DUMP_SOURCE_DIR="${REMOTE_USER}:/micple.com/backups/mongodb/dump/dump"
+DB_DUMP_SOURCE_DIR="${REMOTE_USER}:/micple.com/backups/mongodb/dump_files/dump"
 DB_DUMP_DEST_DIR="${DEST_ROOT_FOLDER}/db-dump"
 DB_DUMP_PREVIOUS_BACKUP_DIR="${DEST_ROOT_FOLDER}/previous-backup-db-dump"
 
