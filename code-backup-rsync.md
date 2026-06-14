@@ -1,7 +1,7 @@
 Copy code and ignore /node_modules, storage.imp, venv folders
 
 ```bash
-rsync -av \
+rsync -av --delete \
   --exclude='node_modules/' \
   --exclude='storage.imp/' \
   --exclude='venv/' \
